@@ -60,7 +60,7 @@ void WordStats::DisplayDictionary(){
 
 // Reads textfile into KnownWords and UnknownWords
 void WordStats::ReadTxtFile(){
-	cout << "Enter filename:" << endl;
+	cout << "Enter filename: ";
 	string input;
 	cin >> input;
 
@@ -71,14 +71,15 @@ void WordStats::ReadTxtFile(){
 		cin.ignore();
 		return;
 	}
-	int i = 0;
+
 	string line;
-	int a = 0;
-	int b = 0;
+	int i = 0;
 	while (File >> line) {
+		if (line == " ") {
+			continue;
+		}
 		line.erase(remove_if(line.begin(), line.end(), ispunct), line.end());
 		transform(line.begin(), line.end(), line.begin(), tolower);
-		i++;
 
 		set<string>::iterator it = Dictionary.find(line);;
 		WordMapIter itr = KnownWords.find(line);
@@ -89,73 +90,103 @@ void WordStats::ReadTxtFile(){
 				(*itr).second.push_back(i);
 			}
 			else {
-				a++;
 				vector<int> vect(1, i);		//vector with one element
 				KnownWords.insert(itr, pair<string, vector<int>>(line, vect));
 			}
 		}else {
-			cout << line << endl;
 			if (itu != UnknownWords.end()) { //Exists in UnknownWords
 
 				(*itu).second.push_back(i);
 			}
 			else {
-				b++;
 				vector<int> vect(1, i);		//vector with one element
 				UnknownWords.insert(itu, pair<string, vector<int>>(line, vect));
 			}
 		}
-
+		i++;
 	}
 	//89 known words read.
 	//49 unknown words read.
-	cout << a;
-	cout << endl << b << endl;
+	cout << KnownWords.size() << " known words read." << endl;
+	cout << UnknownWords.size() << " unknown words read." << endl;
+	cin.ignore();
 }
 
 // Displays stats of words in KnownWords
 void WordStats::DisplayKnownWordStats(){
-	// print out the map:
-	cout << "Ch  Cnt  Indexes\n";
-	for (WordMapIter itr = KnownWords.begin(); itr != KnownWords.end(); ++itr) {
-		string ch = (*itr).first;
-		vector<int> vect = (*itr).second;
-		int cnt = vect.size();
-		cout << ch << "\t\t" << setw(5) << "\t" << cnt << "   ";
-		for (int i = 0; i<cnt; i++)
-			cout << vect[i] << ' ';
-		cout << endl;
-	}
+	DisplayWordStats(KnownWords);
+}
+
+void WordStats::DisplayUnknownWordStats() {
+	DisplayWordStats(UnknownWords);
 }
 
 // Displays stats of words in Unknownwords
-void WordStats::DisplayUnknownWordStats(){
+void WordStats::DisplayWordStats(WordMap  &WMap) {
 	// print out the map:
-	cout << "Ch  Cnt  Indexes\n";
-	for (WordMapIter itr = UnknownWords.begin(); itr != UnknownWords.end(); ++itr) {
+	cout << "Ch" << setw(15) << "  Cnt" << setw(4) << "  Indexes\n";
+	for (WordMapIter itr = WMap.begin(); itr != WMap.end(); ++itr) {
 		string ch = (*itr).first;
 		vector<int> vect = (*itr).second;
 		int cnt = vect.size();
-		cout << ch << "\t\t" << setw(5) << "\t" << cnt << "   ";
+		cout << left << setw(15) << ch
+			<< left << setw(4) << cnt
+			<< left << setw(4) << "   ";
 		for (int i = 0; i<cnt; i++)
 			cout << vect[i] << ' ';
 		cout << endl;
 	}
 }
 
+
 // Displays 20 most frequent words in KnownWords
 void WordStats::DisplayMostFreqKnownWords(){
+	DisplayMostFreqWords(KnownWords);
 }
-
 // Displays 20 most frequent words in UnknownWords
 void WordStats::DisplayMostFreqUnknownWords(){
+	DisplayMostFreqWords(UnknownWords);
 }
 
+// Displays 20 most frequent words in WordMap
+void WordStats::DisplayMostFreqWords(WordMap &Words) {
+	multimap<int, string> m; // new map with int as key (multimap because key could occur more than once)
+	for (WordMapIter itr = Words.begin(); itr != Words.end(); ++itr) { // iterate map again
+		string ch = (*itr).first;
+		int cnt = (*itr).second.size();
+		m.insert(pair<int, string>(cnt, ch)); // insert with count as the key
+	}
+
+	// print out the new map:
+	multimap<int, string>::reverse_iterator itx; // iterator for new map
+	cout << "Cnt  Ch\n";
+	int i = 0;
+	for (itx = m.rbegin(); itx != m.rend() && i <= 20; ++itx) {
+		i++;
+		string ch = (*itx).second;
+		int cnt = (*itx).first;
+		cout << setw(3) << cnt << "   " << ch << endl;
+	}
+	cout << endl;
+}
 // Displays original text from KnownWords & UnknownWords
 void WordStats::DisplayOriginalText(){
+	WordMap cMap;			//Combine maps into one map
+	map<int,string> nMap;			//New Maplist
+	cMap.insert(KnownWords.begin(), KnownWords.end());
+	cMap.insert(UnknownWords.begin(), UnknownWords.end());
+
+	for (WordMapIter itr = cMap.begin(); itr != cMap.end(); ++itr) {
+		vector<int> vect = (*itr).second;
+		int cnt = vect.size();
+		for (int i = 0; i < cnt; i++) {
+			nMap.insert(pair<int,string>(vect[i], (*itr).first));
+		}
+	}
+	
+	string output;
+	
+	for (map<int, string>::iterator it = nMap.begin(); it != nMap.end(); ++it) {
+		cout << it->second << " ";
+	}
 }
-
-// ============ Private Fns ========================
-
-// add your private fns here...
-

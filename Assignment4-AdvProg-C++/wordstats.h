@@ -21,24 +21,24 @@ typedef WordMap::iterator WordMapIter;
 
 class WordStats
 {
-	public:
-		WordStats();
-		void ReadDictionary();
-		void DisplayDictionary();
-		void ReadTxtFile();
-		void DisplayKnownWordStats();
-		void DisplayUnknownWordStats();
-		void DisplayMostFreqKnownWords();
-		void DisplayMostFreqUnknownWords();
-		void DisplayOriginalText();
-	private:
-		WordMap KnownWords;
-		WordMap UnknownWords;
-		set<string> Dictionary;
-		char Filename[256];
-		
-		//add your private fns here
-		
+public:
+	WordStats();
+	void ReadDictionary();
+	void DisplayDictionary();
+	void ReadTxtFile();
+	void DisplayKnownWordStats();
+	void DisplayUnknownWordStats();
+	void DisplayMostFreqKnownWords();
+	void DisplayMostFreqUnknownWords();
+	void DisplayOriginalText();
+private:
+	WordMap KnownWords;
+	WordMap UnknownWords;
+	set<string> Dictionary;
+	char Filename[256];
+
+	void DisplayWordStats(WordMap  &WMap);
+	void DisplayMostFreqWords(WordMap &Words);
 };
 
 #endif
