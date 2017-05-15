@@ -1,0 +1,329 @@
+Welcome to the Text File Analyser
+
+
+(1) Read dictionary
+(2) Display dictionary
+(3) Read text file
+(4) Display known word stats
+(5) Display unknown word stats
+(6) Display most frequent known words
+(7) Display most freqequent unknown words
+(8) Display original text
+(q) Quit
+Command > 1
+
+25133words in the dictionary.
+
+(1) Read dictionary
+(2) Display dictionary
+(3) Read text file
+(4) Display known word stats
+(5) Display unknown word stats
+(6) Display most frequent known words
+(7) Display most freqequent unknown words
+(8) Display original text
+(q) Quit
+Command > 2
+
+A&M
+A&P
+AAA
+AAAS
+AAU
+ABA
+AC
+ACM
+ACS
+AK
+Would you like 10 more results? (y/n)
+y
+
+AL
+AMA
+ANSI
+APS
+AR
+ARPA
+ASTM
+AT&T
+AZ
+Aarhus
+Would you like 10 more results? (y/n)
+n
+
+(1) Read dictionary
+(2) Display dictionary
+(3) Read text file
+(4) Display known word stats
+(5) Display unknown word stats
+(6) Display most frequent known words
+(7) Display most freqequent unknown words
+(8) Display original text
+(q) Quit
+Command > 3
+
+Enter filename: testdata.txt
+92 known words read.
+49 unknown words read.
+
+(1) Read dictionary
+(2) Display dictionary
+(3) Read text file
+(4) Display known word stats
+(5) Display unknown word stats
+(6) Display most frequent known words
+(7) Display most freqequent unknown words
+(8) Display original text
+(q) Quit
+Command > 4
+
+Ch            Cnt  Indexes
+a              7       22 65 87 96 130 148 165
+all            1       50
+and            9       19 70 125 134 138 157 177 247 261
+are            1       74
+as             2       169 214
+automata       1       73
+be             1       99
+begin          1       106
+between        1       132
+border         1       174
+by             5       5 14 93 107 153
+cell           5       97 131 156 180 238
+cellular       1       72
+complete       1       260
+create         1       143
+creating       1       108
+cursor         2       119 124
+dead           4       103 135 186 251
+deep           1       95
+eight          1       171
+every          2       155 237
+first          2       20 110
+for            1       76
+four           1       228
+game           2       1 9
+grid           1       88
+had            1       243
+hard           1       52
+implementation 1       81
+in             7       30 33 37 79 187 210 223
+into           1       86
+invention      1       58
+is             6       84 151 167 183 216 259
+it             4       26 40 69 215
+keys           1       120
+life           2       3 11
+live           10      100 113 133 163 184 200 207 220 231 249
+made           1       248
+mathematician  1       16
+may            1       98
+more           2       63 230
+move           1       122
+new            2       149 257
+next           2       189 225
+none           1       197
+nothing        1       62
+now            1       217
+nowadays       1       47
+of             9       2 10 55 89 112 146 162 203 234
+on             2       44 239
+one            1       199
+or             7       35 102 115 185 198 229 250
+out            1       54
+paper          1       46
+press          1       136
+process        1       263
+public         1       24
+red            1       101
+return         1       137
+same           1       212
+scientific     1       31
+screen         2       83 241
+scrutiny       1       182
+seed           1       116
+serious        1       77
+some           1       60
+state          2       213 245
+study          1       78
+successive     1       144
+take           1       49
+than           1       64
+that           1       173
+the            21      0 8 15 51 82 109 118 123 126 139 160 170 179 188 193 211 224 240 254 256 262
+thereabouts    1       36
+this           2       56 80
+those          1       38
+three          1       219
+to             6       59 67 121 128 192 253
+toggle         1       129
+toy            1       66
+two            1       206
+under          1       181
+up             2       29 159
+use            1       117
+was            3       12 27 41
+when           2       25 236
+white          1       104
+wide           2       23 92
+will           1       141
+work           1       53
+written        2       4 28
+you            1       105
+
+(1) Read dictionary
+(2) Display dictionary
+(3) Read text file
+(4) Display known word stats
+(5) Display unknown word stats
+(6) Display most frequent known words
+(7) Display most freqequent unknown words
+(8) Display original text
+(q) Quit
+Command > 5
+
+Ch  Cnt            Indexes
+               4       196 205 218 227
+1970           1       34
+24             1       94
+40             1       91
+according      2       191 252
+american       1       32
+assessed       1       246
+cells          4       90 114 147 172
+classed        1       168
+computers      1       48
+conway         1       18
+counting       1       158
+created        1       152
+days           1       39
+diagonally     1       178
+dies           2       202 233
+divided        1       85
+fascinating    1       57
+following      1       194
+generation     5       111 150 190 226 258
+generations    1       145
+has            1       242
+horizontally   1       175
+ian            1       6
+invented       1       13
+its            2       61 244
+john           1       17
+lives          1       222
+loneliness     1       204
+mostly         1       42
+neighbour      2       166 201
+neighbours     4       164 208 221 232
+number         1       161
+others         1       68
+played         1       43
+program        1       140
+quickly        1       142
+reached        1       21
+related        1       71
+repeats        1       264
+rules          2       195 255
+scanning       1       154
+sharpe         1       7
+spacebar       1       127
+squared        1       45
+stays          1       209
+subjects       1       75
+suffocation    1       235
+vertically     1       176
+
+(1) Read dictionary
+(2) Display dictionary
+(3) Read text file
+(4) Display known word stats
+(5) Display unknown word stats
+(6) Display most frequent known words
+(7) Display most freqequent unknown words
+(8) Display original text
+(q) Quit
+Command > 6
+
+Cnt  Ch
+21    the
+10    live
+9     of
+9     and
+7     or
+7     in
+7     a
+6     to
+6     is
+5     cell
+5     by
+4     it
+4     dead
+3     was
+2     written
+2     wide
+2     when
+2     up
+2     this
+2     state
+2     screen
+
+
+(1) Read dictionary
+(2) Display dictionary
+(3) Read text file
+(4) Display known word stats
+(5) Display unknown word stats
+(6) Display most frequent known words
+(7) Display most freqequent unknown words
+(8) Display original text
+(q) Quit
+Command > 7
+
+Cnt  Ch
+5     generation
+4     neighbours
+4     cells
+4
+2     rules
+2     neighbour
+2     its
+2     dies
+2     according
+1     vertically
+1     suffocation
+1     subjects
+1     stays
+1     squared
+1     spacebar
+1     sharpe
+1     scanning
+1     repeats
+1     related
+1     reached
+1     quickly
+
+
+(1) Read dictionary
+(2) Display dictionary
+(3) Read text file
+(4) Display known word stats
+(5) Display unknown word stats
+(6) Display most frequent known words
+(7) Display most freqequent unknown words
+(8) Display original text
+(q) Quit
+Command > 8
+
+the game of life written by ian sharpe the game of life was invented by the mathematician john conway and first reached a wide public when it was written up in scientific american in 1970 or thereabouts in those days it was mostly played on squared paper nowadays computers take all the hard work out of this fascinating invention to some its nothing more than a toy to others it and related cellular automata are subjects for serious study in this implementation the screen is divided into a grid of cells 40 wide by 24 deep a cell may be live red or dead white you begin by creating the first generation of live cells or seed use the cursor keys to move the cursor and the spacebar to toggle a cell between live and dead press return and the program will quickly create successive generations of cells a new generation is created by scanning every cell and counting up the number of live neighbours a neighbour is classed as the eight cells that border horizontally vertically and diagonally the cell under scrutiny is live or dead in the next generation according to the following rules  none or one live neighbour dies of loneliness  two live neighbours stays in the same state as it is now  three live neighbours lives in the next generation  four or more live neighbours dies of suffocation when every cell on the screen has had its state assessed and made live or dead according to the rules the new generation is complete and the process repeats
+(1) Read dictionary
+(2) Display dictionary
+(3) Read text file
+(4) Display known word stats
+(5) Display unknown word stats
+(6) Display most frequent known words
+(7) Display most freqequent unknown words
+(8) Display original text
+(q) Quit
+Command > q
+
+Thanks for using Text File Word Counter

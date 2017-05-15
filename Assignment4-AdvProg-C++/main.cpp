@@ -12,7 +12,6 @@ char Menu();
 int main(){
    WordStats ws;
    cout << "Welcome to the Text File Analyser\n\n";
-   ws.ReadDictionary();
    for(;;){
       switch(Menu()){
          case '1': ws.ReadDictionary();      break;
